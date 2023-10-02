@@ -16,3 +16,11 @@
     flex-direction: row;
     gap: 5px;
 }
+
+.measuring-line__result {
+    position: absolute;
+    background-color: rgba(50, 50, 50, .5);
+    padding: 3px;
+    color: white;
+    border-radius: 3px;
+}

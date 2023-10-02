@@ -58,7 +58,7 @@ function MeasuringLine({start, end, isConfig}) {
             <Box 
                 top={top}
                 left={left}
-                style={{position: 'absolute', backgroundColor: 'rgba(50, 50, 50, .5)', padding: '3px', color: 'white', borderRadius: '3px'}}
+                className="measuring-line__result"
             >
                 {`${feet.toFixed(2)} ft`}
             </Box>
