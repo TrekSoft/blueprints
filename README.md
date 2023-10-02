@@ -12,7 +12,11 @@ Whipped this up over the weekend with the following functionality:
 
 ## Get Started
 
-In the project directory, you can run:
+In the project directory, first run:
+
+### `npm install`
+
+You can now run:
 
 ### `npm start`
 
