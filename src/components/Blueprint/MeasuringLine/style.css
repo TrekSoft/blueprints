@@ -1,0 +1,18 @@
+.measuring-line {
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+}
+
+.measuring-line__config {
+    position: absolute;
+    background-color: #000B16;
+    border-radius: 4px;
+    height: 50px;
+    width: 400px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}

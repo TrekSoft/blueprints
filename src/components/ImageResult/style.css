@@ -1,0 +1,28 @@
+.image-result {
+    padding: 10px;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.image-result:hover {
+    background-color: rgba(254, 254, 254, .5);
+    cursor: pointer;
+}
+
+.image-result--selected {
+    background-color: rgb(254, 254, 254);
+    box-shadow: 0px 0px 3px 0px rgba(150,150,150,0.5);
+}
+
+.image-result__image {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid #DCDCDC;
+}
+
+.image-result__label {
+    display: flex;
+    justify-content: center;
+    color: '#5A5A5A';
+}
