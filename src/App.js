@@ -11,6 +11,7 @@ import Blueprint from './components/Blueprint';
 
 function App() {
   const [images, setImages] = useState([]);
+  const [error, setError] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -31,8 +32,12 @@ function App() {
           <Header title={selectedImageData?.title} />
           <Box className='body'>
             <Box className='sidebar'>
-              <ImageSearch setResults={setImages} />
-              <ImageResults results={images} selectedImage={selectedImage} setSelectedImage={handleSelectImage} />
+              <ImageSearch setResults={setImages} setError={setError} />
+              <ImageResults 
+                results={images} 
+                error={error} 
+                selectedImage={selectedImage} 
+                setSelectedImage={handleSelectImage} />
             </Box>
             <Blueprint imageUrl={selectedImageData?.link} />
           </Box>

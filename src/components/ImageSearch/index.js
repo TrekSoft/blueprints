@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-function ImageSearch({ setResults }) {
+function ImageSearch({ setResults, setError }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const searchButtonRef = useRef(null);
@@ -42,6 +42,8 @@ function ImageSearch({ setResults }) {
                 };
             }));
             setIsLoading(false);
+        }).catch(error => {
+            setError('Oops, something wrong wrong!');
         });
     }
 
