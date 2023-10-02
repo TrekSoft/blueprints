@@ -3,7 +3,6 @@ import axios from 'axios';
 import { FormControl, FormLabel, Input, Box, IconButton } from '@mui/joy';
 import SearchIcon from '@mui/icons-material/Search';
 import CircularProgress from '@mui/material/CircularProgress';
-import { sampleResults } from '../../constants';
 
 
 function ImageSearch({ setResults }) {
@@ -26,20 +25,16 @@ function ImageSearch({ setResults }) {
 
     const onSearchClick = () => {
         setIsLoading(true);
-        // axios.get('https://customsearch.googleapis.com/customsearch/v1', {
-        //     params: {
-        //         q: `${searchTerm} floor plan blueprint`,
-        //         num: 10,
-        //         searchType: 'image',
-        //         key: process.env.REACT_APP_API_KEY,
-        //         cx: process.env.REACT_APP_CX
-        //     }
-        // }).then(results => {
-        //     setResults(results.data.items.map(item => item.link));
-        //     setIsLoading(false);
-        // });
-        setTimeout(() => {
-            setResults(sampleResults.map((item, index) => { 
+        axios.get('https://customsearch.googleapis.com/customsearch/v1', {
+            params: {
+                q: `${searchTerm} floor plan blueprint`,
+                num: 10,
+                searchType: 'image',
+                key: process.env.REACT_APP_API_KEY,
+                cx: process.env.REACT_APP_CX
+            }
+        }).then(results => {
+            setResults(results.data.items.map((item, index) => { 
                 return {
                     id: index,
                     link: item.link, 
@@ -47,7 +42,7 @@ function ImageSearch({ setResults }) {
                 };
             }));
             setIsLoading(false);
-        }, 1000);
+        });
     }
 
     return (

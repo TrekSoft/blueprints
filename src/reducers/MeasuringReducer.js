@@ -53,7 +53,6 @@ export function reducer(state, action) {
             return {...state, configData: { ...initialState.configData }};
         case ACTIONS.CONFIG_SAVE:
             const {start, end, measurement, units} = state.configData;
-            console.log(units);
             return {
                 ...state,
                 configData: {

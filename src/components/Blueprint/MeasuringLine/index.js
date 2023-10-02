@@ -2,26 +2,25 @@ import { ACTIONS, UNITS, length } from '../../../reducers/MeasuringReducer';
 import './style.css';
 import { Box, Input, Select, Option, Button, IconButton } from '@mui/joy';
 import ClearIcon from '@mui/icons-material/Clear';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { measurementContext } from '../../../contexts/MeasurementContext';
 
 function MeasuringLine({start, end, isConfig}) {
     const {state, dispatch} = useContext(measurementContext);
-    console.log(state, isConfig);
 
     const configBox = () => {
         const top = Math.min(start.y, end.y) - 60;
         const left = start.y < end.y ? start.x : end.x;
 
-        const handleMeasurementChange = e => {
+        const handleMeasurementChange = (e) => {
             if (e?.target) {
                 dispatch({type: ACTIONS.CONFIG_EDIT_MEASUREMENT, measurement: e.target.value});
             }
         }
 
-        const handleUnitsChange = e => {
-            if (e?.target) {
-                dispatch({type: ACTIONS.CONFIG_EDIT_UNITS, units: e.target.value});
+        const handleUnitsChange = (e, newValue) => {
+            if (newValue) {
+                dispatch({type: ACTIONS.CONFIG_EDIT_UNITS, units: newValue});
             }
         }
 

@@ -57,6 +57,7 @@ function Blueprint({imageUrl}) {
         <Box className='blueprint'>
             {imageUrl ? 
                 <img 
+                    alt="blueprint"
                     className={`blueprint__image ${state.isSelected ? 'blueprint__image--measuring' : ''}`}
                     src={imageUrl} 
                     onClick={handleBlueprintClick} /> : 

@@ -8,7 +8,7 @@ function ImageResult({result, isSelected, setSelectedImage}) {
             className={`image-result ${isSelected && 'image-result--selected'}`}
             onClick={() => setSelectedImage(result.id)}
         >
-            <img className='image-result__image' src={result.link} />
+            <img alt="thumbnail" className='image-result__image' src={result.link} />
             <Box className='image-result__label'>{result.id}</Box>
         </Box>
     );
